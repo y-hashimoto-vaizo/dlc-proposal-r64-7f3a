@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>V/AIBOU 導入ご提案 エグゼクティブサマリ — PRO-2026-DLC-008-rev6.0</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+@page {
+  size: A4;
+  margin: 14mm 14mm 16mm 14mm;
+  @bottom-center {
+    content: counter(page) " / " counter(pages);
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    color: #888;
+  }
+  @bottom-left {
+    content: "PRO-2026-DLC-008-rev5.9 / EXECUTIVE SUMMARY";
+    font-family: 'Inter', sans-serif;
+    font-size: 7pt;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #999;
+  }
+  @bottom-right {
+    content: "VAIZO INTERNAL — CONFIDENTIAL";
+    font-family: 'Inter', sans-serif;
+    font-size: 7pt;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #999;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  background: #fff;
+  color: #000;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+@media screen {
+  body {
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 14mm 10mm;
+  }
+}
+
+.meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3mm;
+  margin-bottom: 5mm;
+  font-family: 'Inter', sans-serif;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #000;
+}
+.meta-bar .right { font-weight: 300; color: #444; }
+
+.title-block {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10mm;
+  align-items: end;
+  padding-bottom: 4mm;
+  border-bottom: 1px solid #000;
+  margin-bottom: 5mm;
+}
+.title-logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 44pt;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+  color: #000;
+}
+.title-logo .slash { display: inline-block; margin: 0 0.04em; }
+.title-info .eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+  color: #000;
+}
+.title-info .target {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13pt;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1mm;
+}
+.title-info .target-sub {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 9pt;
+  font-weight: 400;
+  color: #444;
+}
+
+.tagline-block {
+  margin: 5mm 0;
+  padding: 5mm 6mm;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  text-align: center;
+}
+.tagline-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #000;
+  line-height: 1.4;
+  margin-bottom: 2mm;
+}
+.tagline-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  font-weight: 400;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.summary-statement {
+  margin: 5mm 0;
+  padding: 4mm 5mm;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 9.5pt;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #000;
+}
+.summary-statement b { font-weight: 700; }
+
+.summary-lead {
+  margin: 5mm 0 3mm 0;
+  padding: 4mm 5mm;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10pt;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #000;
+  text-align: center;
+}
+.summary-lead b { font-weight: 700; }
+
+.conclusion-badge {
+  display: inline-block;
+  padding: 1.6mm 5mm 1.5mm 5mm;
+  margin: 4mm 0 0 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11pt;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  line-height: 1.3;
+  border-radius: 0;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 5mm 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 9pt;
+  font-weight: 300;
+}
+.summary-table th {
+  width: 26%;
+  text-align: left;
+  padding: 4mm 4.5mm;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #d9d9d9;
+  vertical-align: middle;
+  background: #f5f5f5;
+}
+.summary-table td {
+  padding: 4mm 4.5mm;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #d9d9d9;
+  vertical-align: middle;
+  font-size: 9pt;
+  line-height: 1.75;
+  color: #000;
+}
+.summary-table tr:last-child th,
+.summary-table tr:last-child td {
+  border-bottom: 1px solid #000;
+}
+.summary-table b { font-weight: 700; color: #000; }
+
+.tax-note {
+  margin: 1mm 0 3mm 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 400;
+  color: #888;
+  text-align: right;
+  letter-spacing: 0;
+}
+.tax-note b { font-weight: 600; color: #555; }
+.summary-table .small {
+  display: block;
+  margin-top: 1mm;
+  font-size: 7.5pt;
+  font-weight: 300;
+  color: #666;
+  letter-spacing: 0;
+}
+.plan-row {
+  margin-bottom: 2mm;
+  line-height: 1.55;
+}
+.plan-row:last-child { margin-bottom: 0; }
+.plan-row b { display: inline-block; margin-right: 2mm; }
+.cell-sub {
+  display: block;
+  margin-top: 0.8mm;
+  font-size: 7.5pt;
+  color: #666;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.lecture-tag {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 1.2mm 2.8mm;
+  background: #ececec;
+  border: 1pt solid #b8b8b8;
+  color: #3a3a3a;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+.lecture-tag svg {
+  width: 11px;
+  height: 11px;
+  margin-right: 2mm;
+  fill: #3a3a3a;
+  flex-shrink: 0;
+}
+.pillar-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.pillar-body > .lecture-tag {
+  margin-top: auto;
+}
+.plan-cond {
+  font-size: 8pt;
+  color: #555;
+  margin-left: 1.5mm;
+}
+
+.section-box {
+  background: #ffffff;
+  padding: 5mm 7mm 6mm 7mm;
+  margin: 0 0 7mm 0;
+  border: 0.5pt solid #e2e2e2;
+  border-radius: 2mm;
+  box-shadow: 0 3pt 9pt rgba(0,0,0,0.07), 0 1pt 2pt rgba(0,0,0,0.04);
+  page-break-inside: avoid;
+}
+.section-box > h2:first-child {
+  margin-top: 1mm;
+}
+
+h2 {
+  margin: 2mm 0 3mm 0;
+  padding-bottom: 2mm;
+  border-bottom: 2.6pt solid #000;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #000;
+  page-break-after: avoid;
+  display: flex;
+  align-items: center;
+}
+h2 .num {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 1mm 2.8mm;
+  font-family: 'Inter', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-right: 3mm;
+  line-height: 1.3;
+}
+.section-note {
+  margin: 0 0 3mm 0;
+  padding: 2.5mm 4mm;
+  background: #f5f5f5;
+  border-left: 3pt solid #000;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 9pt;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #000;
+}
+.section-note b { font-weight: 700; }
+
+h3 {
+  margin: 3mm 0 1mm 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+p {
+  margin: 0 0 2mm 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #1a1a1a;
+}
+strong { font-weight: 700; color: #000; }
+
+ul {
+  margin: 0 0 2mm 0;
+  padding-left: 4mm;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #1a1a1a;
+}
+li { margin-bottom: 0.5mm; }
+li b, li strong { font-weight: 700; color: #000; }
+
+.small {
+  font-size: 7.5pt;
+  color: #666;
+  font-weight: 300;
+}
+
+.core-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  margin: 3mm 0;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.core-cell {
+  padding: 4mm 4mm 4mm 0;
+  border-right: 1px solid #d9d9d9;
+}
+.core-cell:nth-child(n+2) { padding-left: 4mm; }
+.core-cell:last-child { padding-right: 0; border-right: none; }
+.core-cell-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 2mm;
+}
+.core-cell-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #000;
+  margin-bottom: 2mm;
+}
+.core-cell-body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 8pt;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #2a2a2a;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+  margin: 3mm 0;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.pillar {
+  padding: 3mm 4mm 3mm 0;
+  border-right: 1px solid #d9d9d9;
+  page-break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+}
+.pillar:nth-child(2n) {
+  padding-right: 0;
+  padding-left: 4mm;
+  border-right: none;
+}
+.pillar:nth-child(n+3) {
+  border-top: 1px solid #d9d9d9;
+  margin-top: -1px;
+  padding-top: 3mm;
+}
+.pillar-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 1.5mm;
+}
+.pillar-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: #000;
+  margin-bottom: 1.5mm;
+}
+.pillar-price-badge {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 1.2mm 3mm 1.2mm 3mm;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  font-size: 9.5pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  margin-bottom: 2mm;
+}
+.pillar-price-badge .badge-step {
+  font-family: 'Inter', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  margin-right: 2mm;
+  opacity: 0.75;
+}
+.pillar-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #000;
+  margin-bottom: 1.5mm;
+}
+.pillar-body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 8pt;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #2a2a2a;
+}
+.pillar-body b, .pillar-body strong {
+  font-weight: 700;
+  color: #000;
+}
+
+.price-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 3mm 0;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.price-cell {
+  padding: 4mm 5mm 4mm 0;
+  border-right: 1px solid #d9d9d9;
+}
+.price-cell:last-child {
+  padding-right: 0;
+  padding-left: 5mm;
+  border-right: none;
+}
+.price-cell-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 2mm;
+}
+.price-cell-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 24pt;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: #000;
+  margin-bottom: 1mm;
+}
+.price-cell-value .unit {
+  font-size: 9pt;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #444;
+}
+.price-cell-note {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+.price-cell-note b { font-weight: 700; color: #000; }
+
+.roi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  margin: 3mm 0;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.roi-cell {
+  padding: 4mm 4mm 4mm 0;
+  border-right: 1px solid #d9d9d9;
+  text-align: left;
+}
+.roi-cell:nth-child(n+2) { padding-left: 4mm; }
+.roi-cell:last-child { padding-right: 0; border-right: none; }
+.roi-cell-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 2mm;
+}
+.roi-cell-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 18pt;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: #000;
+  margin-bottom: 1mm;
+}
+.roi-cell-unit {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 300;
+  color: #666;
+  line-height: 1.5;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2mm 0 3mm 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 8pt;
+  font-weight: 400;
+  page-break-inside: avoid;
+}
+th {
+  text-align: left;
+  padding: 2mm 2.5mm;
+  font-family: 'Inter', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+td {
+  padding: 2mm 2.5mm;
+  border-bottom: 1px solid #d9d9d9;
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: 1px solid #000; }
+td b, td strong { font-weight: 700; color: #000; }
+
+.next-action {
+  margin: 9mm 0 0 0;
+  padding: 6mm 7mm 6mm 8mm;
+  background: #1a1a1a;
+  border: none;
+  border-left: 4pt solid #FF6A00;
+  border-radius: 1.5mm;
+  page-break-inside: avoid;
+  color: #ffffff;
+  box-shadow: 0 6pt 16pt rgba(0,0,0,0.18), 0 2pt 4pt rgba(0,0,0,0.10);
+}
+.next-action-label {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 900;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  background: #FF6A00;
+  padding: 1.3mm 3.5mm;
+  margin-bottom: 4mm;
+  line-height: 1.3;
+}
+.next-action-statement {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13pt;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  margin-bottom: 4mm;
+  line-height: 1.5;
+}
+.next-action-statement b { color: #FF9A4A; }
+.next-action-note {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 8pt;
+  font-weight: 400;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.65;
+  border-top: 1pt solid rgba(255,106,0,0.45);
+  padding-top: 3.5mm;
+}
+
+/* === 主役：開発伴走支援セクションのハイライト === */
+.hero-support {
+  margin: 5mm 0 6mm 0;
+  padding: 6mm 7mm;
+  background: #000;
+  color: #fff;
+  border-radius: 2mm;
+  page-break-inside: avoid;
+}
+.hero-support .hero-label {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 8pt;
+  font-weight: 900;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  background: #FF6A00;
+  color: #1a1a1a;
+  padding: 1.2mm 3.5mm;
+  margin-bottom: 3mm;
+}
+.hero-support .hero-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16pt;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  margin-bottom: 2mm;
+  color: #fff;
+}
+.hero-support .hero-sub {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 9.5pt;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 4mm;
+}
+.hero-support .hero-sub b { color: #FF9A4A; font-weight: 700; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1pt solid rgba(255,255,255,0.25);
+  border-bottom: 1pt solid rgba(255,255,255,0.25);
+}
+.hero-cell {
+  padding: 4mm 5mm 4mm 0;
+  border-right: 1pt solid rgba(255,255,255,0.18);
+}
+.hero-cell:last-child {
+  padding-right: 0;
+  padding-left: 5mm;
+  border-right: none;
+}
+.hero-cell-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #FF9A4A;
+  margin-bottom: 2mm;
+}
+.hero-cell-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11pt;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5mm;
+}
+.hero-cell-body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.85);
+}
+.hero-cell-body b { color: #fff; font-weight: 700; }
+.hero-owner {
+  margin-top: 4mm;
+  padding-top: 3mm;
+  border-top: 1pt solid rgba(255,255,255,0.25);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 9pt;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+}
+.hero-owner b { color: #FF9A4A; font-weight: 700; }
+
+/* === 参考（グレーアウト）：システム開発見積セクション === */
+.reference-only {
+  position: relative;
+  opacity: 0.55;
+  filter: grayscale(0.85);
+  background: #f5f5f5 !important;
+  border: 1pt dashed #b8b8b8 !important;
+  box-shadow: none !important;
+  color: #6a6a6a !important;
+}
+.reference-only h2 {
+  color: #6a6a6a !important;
+  border-bottom-color: #b8b8b8 !important;
+}
+.reference-only h2 .num {
+  background: #888 !important;
+  color: #fff !important;
+}
+.reference-only b,
+.reference-only strong,
+.reference-only td b,
+.reference-only td strong,
+.reference-only .pillar-body b,
+.reference-only .pillar-body strong,
+.reference-only .price-cell-value,
+.reference-only .roi-cell-value {
+  color: #4a4a4a !important;
+}
+.reference-only .pillar-price-badge,
+.reference-only .conclusion-badge {
+  background: #888 !important;
+  color: #fff !important;
+}
+.reference-only table th,
+.reference-only table td {
+  color: #6a6a6a !important;
+  border-color: #c8c8c8 !important;
+}
+.reference-only .section-note {
+  background: #ececec !important;
+  border-left-color: #888 !important;
+  color: #5a5a5a !important;
+}
+.reference-only .reference-banner {
+  position: absolute;
+  top: 4mm;
+  right: 5mm;
+  display: inline-block;
+  padding: 1.2mm 3.5mm;
+  background: #888;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 900;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+.reference-inline {
+  display: inline-block;
+  margin-left: 3mm;
+  padding: 0.6mm 2.2mm;
+  background: #888;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+</style>
+</head>
+<body>
+
+<div class="meta-bar">
+  <div>VAIZO INTERNAL</div>
+  <div class="right">2026.05.08 — Executive Summary</div>
+</div>
+
+<div class="title-block">
+  <div class="title-logo">V<span class="slash">/</span>AIBOU</div>
+  <div class="title-info">
+    <div class="eyebrow">PROPOSAL FOR ENTERPRISE — 2 PAGES</div>
+    <div class="target">株式会社ディライト・カンパニー 御中</div>
+    <div class="target-sub">代表取締役 小島 康平 様 ／ 株式会社VAIZO ／ DOC NO. PRO-2026-DLC-008-rev6.0</div>
+  </div>
+</div>
+
+<div class="summary-lead">
+<b>ご提供のメインは「開発伴走支援」</b>。実装基盤は <b>Google Drive ＋ Claude Code（御社環境）</b>で完結します。<br>
+ディライト・カンパニー様の<b>IT推進担当者様</b>の手元に Claude Code 開発環境を構築し、Google Drive と組み合わせて自社の業務AIを内製いただきます。<br>
+支援期間中の <b>伴走支援費は月額10万円（税抜）</b>。参謀AIプラットフォーム費用はかかりません。個別開発の見積はあくまで<b>参考</b>。
+</div>
+
+<div class="hero-support">
+  <div class="hero-label">CORE OFFER</div>
+  <div class="hero-title">Google Drive ＋ Claude Code ＋ 開発伴走支援。<br>御社IT推進担当者様が、自社環境で業務AIを組み立てる。</div>
+  <div class="hero-sub">実装基盤は <b>御社環境の Claude Code ＋ Google Drive</b>。VAIZOは <b>伴走</b> に徹し、<b>月4回（週60分×3回＋月1回オーダーメード）</b>で、IT推進担当者様が自走できるところまで支援します。<br><b>参謀AIプラットフォーム費用は発生しません</b>（Claude Code の API 利用料のみ Anthropic 直契約／実費）。</div>
+  <div class="hero-grid">
+    <div class="hero-cell">
+      <div class="hero-cell-label">WEEKLY 60min × 3</div>
+      <div class="hero-cell-title">週次伴走（60分・月3回）</div>
+      <div class="hero-cell-body"><b>動画講義 20分</b>（録画資産化）→ <b>やってみる 30分</b>（Claude Codeで実装・検証）→ <b>質疑応答 10分</b></div>
+    </div>
+    <div class="hero-cell">
+      <div class="hero-cell-label">MONTHLY 60min × 1 — DELIGHT EXCLUSIVE</div>
+      <div class="hero-cell-title">月次オーダーメード（60分・月1回・ディライト様特別）</div>
+      <div class="hero-cell-body">通常メニューにとらわれない<b>自由設計の60分</b>。当月の優先テーマに合わせて内容を都度組み立て。<b>ディライト様への特別提供枠</b>。</div>
+    </div>
+  </div>
+  <div class="hero-owner">
+    <b>担当：</b>株式会社ディライト・カンパニー様の<b>IT推進担当者様</b>が、Google Drive ＋ Claude Code で自社の業務AIを開発・改善。VAIZOは伴走に徹します。
+  </div>
+</div>
+
+<p class="tax-note">※ 本書類に記載の金額はすべて<b>税別（税抜）表記</b>です。</p>
+<table class="summary-table">
+  <tr>
+    <th>主役提供価値</th>
+    <td><b>開発伴走支援</b>（月4回・60分／回／週60分×3回＋月1回オーダーメード）<br><span class="cell-sub">御社IT推進担当者様が Google Drive ＋ Claude Code で内製する設計</span></td>
+  </tr>
+  <tr>
+    <th>実装基盤</th>
+    <td><b>Google Drive ＋ Claude Code（御社環境）</b><br><span class="cell-sub">参謀AIプラットフォーム費用は発生しません／Claude Code API は Anthropic 直契約・実費</span></td>
+  </tr>
+  <tr>
+    <th>月額（伴走支援費）</th>
+    <td><b>月額 10万円（税抜）</b><br><span class="cell-sub">支援期間中／月4回（週60分×3回＋月1回オーダーメード）／Claude Code 環境構築・Google Drive 構造設計の初期セットアップ込み</span></td>
+  </tr>
+  <tr>
+    <th>店舗・他メンバー展開時のオプション</th>
+    <td><b>参謀AIプラットフォーム（V/AIBOU）月額 5万円（税抜）</b><br><span class="cell-sub">IT推進担当者様以外の <b>ITリテラシーが高くない店長さん等</b> へ展開するときに有効。<b>使うようになったときに、お支払いいただければOK</b>。最初から払う必要はありません。</span></td>
+  </tr>
+  <tr>
+    <th>個別開発（参考価格）<span class="reference-inline">REF</span></th>
+    <td style="color:#6a6a6a;"><b style="color:#6a6a6a;">3 STEP 合計 120万円</b>（補助金活用で実質 60万円）<br><span class="cell-sub">※伴走で内製化できなかった場合に VAIZO で請け負う際の参考金額</span></td>
+  </tr>
+</table>
+
+<section class="section-box">
+<h2><span class="num">§1</span>構成 — Google Drive ＋ Claude Code（御社環境）</h2>
+<div class="core-grid">
+  <div class="core-cell">
+    <div class="core-cell-label">LAYER 01 / DATA</div>
+    <div class="core-cell-title">Google Drive</div>
+    <div class="core-cell-body">議事録・日報・KPIスプシ・面談ログ等を<b>Drive に集約</b>。共有ドライブ＋フォルダ設計＋権限設計で社内ナレッジの一次置き場に。</div>
+  </div>
+  <div class="core-cell">
+    <div class="core-cell-label">LAYER 02 / AI</div>
+    <div class="core-cell-title">Claude Code（御社環境）</div>
+    <div class="core-cell-body">IT推進担当者様の手元に <b>Claude Code 開発環境</b>を構築。Drive と連携し、<b>対話・コード生成・ファイル編集・実行</b>を一気通貫で実装。</div>
+  </div>
+  <div class="core-cell">
+    <div class="core-cell-label">LAYER 03 / GROWTH</div>
+    <div class="core-cell-title">開発伴走支援</div>
+    <div class="core-cell-body">週60分＋月60分オーダーメードで、<b>業務AI を御社内製で立ち上げ・改善</b>し続けられる体制を確立。</div>
+  </div>
+</div>
+</section>
+
+<section class="section-box">
+<h2><span class="num">§2</span>御社内製で立ち上げる4種の業務AI</h2>
+<div class="section-note">下記4種は、御社環境の <b>Google Drive ＋ Claude Code</b> で内製化する業務AIです。<b>月額10万円の伴走で、4種すべてをやり切る前提</b>。STEP 2〜4 の金額は <b>補助金申請上の「システム開発」名目として位置づけるための参考</b>です。</div>
+<div class="pillar-grid">
+  <div class="pillar">
+    <div class="pillar-role">V/SHOKI</div>
+    <div class="pillar-price-badge">伴走で最初に構築</div>
+    <div class="pillar-title">書記AI（議事録ナレッジ化）</div>
+    <div class="pillar-body"><b>Gemini で文字起こしした議事録</b>を Claude Code が取得し、要約・タグ付けで<b>ナレッジ化</b> → <b>Google Drive に自動整理・保存</b>。検索可能なDBへ蓄積し、社内の暗黙知を資産化。<br><b>伴走の最初の題材として、IT推進担当者様が自分の手で立ち上げます。</b><span class="lecture-tag"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h7a3 3 0 0 1 3 3v13H6a2 2 0 0 1-2-2V4z"/><path d="M20 4h-7a3 3 0 0 0-3 3v13h8a2 2 0 0 0 2-2V4z" opacity="0.55"/></svg>開発伴走支援の最初の題材</span></div>
+  </div>
+  <div class="pillar" style="opacity:0.55;filter:grayscale(0.85);">
+    <div class="pillar-role">V/NIPPO <span class="reference-inline">REF</span></div>
+    <div class="pillar-price-badge" style="background:#888;">参考 30万円</div>
+    <div class="pillar-title" style="color:#5a5a5a;">日報AI社員（日報の報告メール仕分け）</div>
+    <div class="pillar-body" style="color:#6a6a6a;">日報の報告メールを自動で取得→送信者ごとに仕分け→KPI/リスク/機会を分類抽出。スプシ集計まで一気通貫。<br><b style="color:#5a5a5a;">月額10万円の伴走の中で内製化／補助金申請名目の参考金額。</b></div>
+  </div>
+  <div class="pillar" style="opacity:0.55;filter:grayscale(0.85);">
+    <div class="pillar-role">V/KPI <span class="reference-inline">REF</span></div>
+    <div class="pillar-price-badge" style="background:#888;">参考 40万円</div>
+    <div class="pillar-title" style="color:#5a5a5a;">KPI管理・分析AI社員（スプシ分析）</div>
+    <div class="pillar-body" style="color:#6a6a6a;">KPIスプシを自動で巡回。<b style="color:#5a5a5a;">欠損エラー検出を最重要視</b>し、日次・週次・月次・任意で異常通知。<br><b style="color:#5a5a5a;">月額10万円の伴走の中で内製化／補助金申請名目の参考金額。</b></div>
+  </div>
+  <div class="pillar" style="opacity:0.55;filter:grayscale(0.85);">
+    <div class="pillar-role">V/MENDAN <span class="reference-inline">REF</span></div>
+    <div class="pillar-price-badge" style="background:#888;">参考 50万円</div>
+    <div class="pillar-title" style="color:#5a5a5a;">面談AI社員（人事査定等）</div>
+    <div class="pillar-body" style="color:#6a6a6a;">月1回 全従業員に <b style="color:#5a5a5a;">テキストチャットで深掘り面談</b>。共有先（本人のみ／上司／人事／経営層）任意設定可。<br><b style="color:#5a5a5a;">月額10万円の伴走の中で内製化／補助金申請名目の参考金額。</b></div>
+  </div>
+</div>
+</section>
+
+<section class="section-box">
+<h2><span class="num">§3</span>金額感サマリ ／ 補助金申請の建付け</h2>
+<div class="section-note"><b>基本方針：月額10万円の伴走で、すべてやり切ります。</b>下記の STEP 2〜4 の金額は <b>補助金申請上の「システム開発」名目</b>として位置づけるための参考。実装は伴走の中で完了します。</div>
+
+<div class="price-pair">
+  <div class="price-cell">
+    <div class="price-cell-label">月額（伴走支援費・支援期間中）</div>
+    <div class="price-cell-value">10万円<span class="unit"> / 月（税抜）</span></div>
+    <div class="price-cell-note">支援期間中の <b>伴走支援費 月額10万円（税抜）</b>。<br><b>月4回（週60分×3回＋月1回オーダーメード）</b>／Claude Code 環境構築・Google Drive 構造設計の初期セットアップ込み。<br><b>参謀AIプラットフォーム費用なし／Claude Code API は Anthropic 直契約・実費。</b></div>
+  </div>
+  <div class="price-cell" style="opacity:0.55;filter:grayscale(0.85);background:#ececec;border-radius:1.5mm;padding:4mm 5mm;">
+    <div class="price-cell-label" style="color:#5a5a5a;">個別開発（補助金申請名目・参考） <span class="reference-inline">REF</span></div>
+    <div class="price-cell-value" style="color:#5a5a5a;">120万円<span class="unit" style="color:#7a7a7a;"> / 3STEP合計（税抜）</span></div>
+    <div class="price-cell-note" style="color:#6a6a6a;"><b style="color:#5a5a5a;">補助金申請上の「システム開発」名目として位置づけるための参考金額</b>。実装は伴走の中で完了します。</div>
+  </div>
+</div>
+
+<div style="margin-top:5mm;padding:5mm 6mm;border:1pt solid #000;border-radius:1.5mm;background:#fafafa;">
+  <div style="font-family:'Inter',sans-serif;font-size:7.5pt;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:#000;margin-bottom:2mm;">OPTIONAL — FOR STAFF ROLLOUT</div>
+  <div style="font-family:'Noto Sans JP',sans-serif;font-size:11pt;font-weight:700;color:#000;margin-bottom:2mm;">店舗・他メンバー展開時のオプション ／ 参謀AIプラットフォーム（V/AIBOU）月額 5万円（税抜）</div>
+  <div style="font-family:'Noto Sans JP',sans-serif;font-size:8.5pt;font-weight:400;line-height:1.7;color:#1a1a1a;">
+  IT推進担当者様以外の、たとえば <b>ITリテラシーが比較的高くない店長さん</b> など、Claude Code を直接触らないメンバーへ社内展開するときに有効です。<br>
+  <b>使うようになったタイミングで、お支払いいただければOK</b>。最初から払う必要はありません。<b>使わない月は0円</b>です。<br>
+  ※ 伴走支援費（月額10万円）とは別枠の <b>追加オプション</b>。本提案の前提は <b>月額10万円の伴走で IT推進担当者様がやり切る</b> 構成です。
+  </div>
+</div>
+
+<table style="opacity:0.6;filter:grayscale(0.85);">
+  <tr><th colspan="3" style="text-align:center;background:#ececec;color:#5a5a5a;">参考：システム開発 STEP 別金額（補助金申請名目）</th></tr>
+  <tr><th>STEP</th><th>業務AI</th><th>金額（税抜）</th></tr>
+  <tr><td>STEP 2</td><td>V/NIPPO（日報AI）</td><td>30万円</td></tr>
+  <tr><td>STEP 3</td><td>V/KPI（KPI管理・分析AI）</td><td>40万円</td></tr>
+  <tr><td>STEP 4</td><td>V/MENDAN（面談AI・人事査定等）</td><td>50万円</td></tr>
+  <tr><td colspan="2"><b>3 STEP 合計</b></td><td><b>120万円</b></td></tr>
+</table>
+</section>
+
+<section class="section-box">
+<h2><span class="num">§4</span>スケジュール</h2>
+<table>
+  <tr><th style="width: 25%;">時期</th><th>イベント</th></tr>
+  <tr><td>2026/05 中〜下旬</td><td>提案クロージング協議／宮城県中小企業支援室への事前相談</td></tr>
+  <tr><td><b>2026/05 月末</b></td><td><b>契約締結（クロージング）</b></td></tr>
+  <tr><td>2026/06 第1週</td><td><b>Claude Code 環境構築</b>（IT推進担当者様の手元）／Anthropic API 直契約セットアップ／Google Drive 構造設計</td></tr>
+  <tr><td>2026/06</td><td>V/SHOKI（議事録ナレッジ化）を伴走で立ち上げ → <b>開発伴走支援スタート（支援期間中・月額10万円／税抜）</b></td></tr>
+  <tr><td>2026/06〜</td><td>月4回（週60分×3回＋月1回オーダーメード／ディライト様特別）</td></tr>
+  <tr><td>2026/07 中旬</td><td>宮城県デジタル化支援 申請書 一括提出（システム開発名目で申請）</td></tr>
+  <tr><td>2026/06〜</td><td>月額10万円の伴走で V/SHOKI → V/NIPPO → V/KPI → V/MENDAN を順次内製化（やり切る前提）</td></tr>
+</table>
+</section>
+
+<div class="next-action">
+  <div class="next-action-label">Next Action</div>
+  <div class="next-action-statement">5月末クロージング → 6月から <b>Claude Code 環境構築 ＋ 開発伴走支援スタート</b>（支援期間中・月額10万円／税抜／IT推進担当者様が主担当）</div>
+  <div class="next-action-note">参謀AIプラットフォーム費用なし／Claude Code API は Anthropic 直契約・実費。<br>STEP 2〜4 を含むすべてを月額10万円の伴走でやり切ります。</div>
+</div>
+
+</body>
+</html>
